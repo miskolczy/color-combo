@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Color Combo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="application-name" content="Color Combo">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#000000" id="themeColorMeta">
+  <meta property="og:image" content="https://miskolczy.github.io/color-combo/open-graph-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./favicon.ico" sizes="48x48">
+  <link rel="icon" href="./favicon.svg" sizes="any" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+</head>
+
+<div class="color-grid" id="colorGrid"></div>
+
+<nav>
+
+  <div class="tabs" id="schemeTabs">
+    <button class="tab active" data-scheme="polychromatic">Polychromatic</button>
+    <button class="tab" data-scheme="monochromatic">Monochromatic</button>
+    <button class="tab" data-scheme="analogous">Analogous</button>
+  </div>
+
+  <div class="input-row">
+    <div class="input-row">
+      <label class="input-row">
+        <input type="checkbox" id="contrastingTones" checked>
+        <span class="icon checkmark">
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+            <path d="M12.277 3.584a.5.5 0 0 1 .139.693l-5 7.5a.5.5 0 0 1-.77.077l-3-3a.5.5 0 0 1 .708-.708l2.568 2.57 4.662-6.993a.5.5 0 0 1 .693-.139" fill="currentColor"></path>
+          </svg>
+        </span>
+        Contrasting tones
+      </label>
+      <label class="input-row">
+        <input type="checkbox" id="textColorToggle">
+        <span class="icon checkmark">
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+            <path d="M12.277 3.584a.5.5 0 0 1 .139.693l-5 7.5a.5.5 0 0 1-.77.077l-3-3a.5.5 0 0 1 .708-.708l2.568 2.57 4.662-6.993a.5.5 0 0 1 .693-.139" fill="currentColor"></path>
+          </svg>
+        </span>
+        Text
+      </label>
+    </div>
+    <div class="input-number">
+      <button class="btnicon" id="decreaseColors">
+        <span class="icon">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path d="M6 12a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 6 12" fill="currentColor"></path>
+          </svg>
+        </span>
+      </button>
+      <span id="numColorsDisplay">3</span>
+      <button class="btnicon" id="increaseColors">
+        <span class="icon">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path d="M12 6a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 12 6" fill="currentColor"></path>
+          </svg>
+        </span>
+      </button>
+    </div>
+
+  </div>
+
+  <div class="input-row">
+
+    <div class="color-input">
+      <div class="colortext-wrapper">
+        <input type="color" id="colorPicker" value="#3498db">
+        <div class="text-wrapper">
+          <input type="text" id="hexInput" value="#EB4747" maxlength="7">
+        </div>
+      </div>
+      <div class="select-wrapper">
+        <select class="color-select" id="colorDropdown">
+          <option value="5">Red</option>
+          <option value="15">Red-Orange</option>
+          <option value="30">Orange</option>
+          <option value="45">Yellow-Orange</option>
+          <option value="55">Yellow</option>
+          <option value="75">Yellow-Green</option>
+          <option value="140">Green</option>
+          <option value="200">Blue-Green</option>
+          <option value="240">Blue</option>
+          <option value="265">Blue-Violet</option>
+          <option value="280">Violet</option>
+          <option value="300">Red-Violet</option>
+        </select>
+
+        <span class="select-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.646 11.146a.5.5 0 0 1 .708 0L12 12.793l1.646-1.647a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 0-.708" fill="currentColor" />
+          </svg>
+        </span>
+      </div>
+
+    </div>
+
+    <button class="secondary" id="randomBtn">Random color</button>
+
+  </div>
+
+  <div class="slider-group">
+    <input type="range" id="hueSlider" min="0" max="360" value="0">
+    <input type="range" id="satSlider" min="0" max="100" value="60">
+    <input type="range" id="lightSlider" min="0" max="100" value="60">
+  </div>
+</nav>
+<script src="./script.js"></script>
+
+</body>
+
+</html>
